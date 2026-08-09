@@ -90,7 +90,7 @@ Estas decisiones permiten transformar el proceso de generación de caracteres en
 
 Los diagramas de flujo fueron utilizados como representación previa de la lógica del programa. Posteriormente, cada proceso fue transformado en instrucciones de Python.
 
-| Proceso representado | Implementación en el programa |
+| **Proceso representado** | **Implementación en el programa** |
 |---|---|
 | Solicitar la longitud | Entrada de datos mediante `input()` |
 | Validar la longitud | Estructuras condicionales |
