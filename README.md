@@ -128,7 +128,4 @@ Generador-Contrase-as-Seguras/
 │   ├── Diagrama_3_Seleccion_Caracteres.png
 │   ├── Diagrama_4_Guardar_Historial.png
 │   └── Diagrama_5_Arquitectura.png
-│
-├── Documentacion/
-│
 └── README.md
