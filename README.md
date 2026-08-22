@@ -1,133 +1,134 @@
-## Generador de Contraseñas Seguras
+# Generador de Contraseñas Seguras
 
-## Descripción
+## 1. Descripción del proyecto
 
-Este proyecto consiste en el desarrollo de un programa en Python para generar contraseñas seguras de manera aleatoria.
+El proyecto consiste en el desarrollo de un sistema en Python para generar contraseñas seguras de manera aleatoria. El usuario puede establecer la longitud de la contraseña y seleccionar los tipos de caracteres que desea utilizar.
 
-El usuario puede seleccionar la longitud de la contraseña y los tipos de caracteres que desea incluir:
+El sistema fue desarrollado como parte del proyecto integrador de la asignatura, aplicando conocimientos de programación, estructuras lógicas, organización del código, diseño funcional y arquitectura de software.
 
-- Letras mayúsculas
-- Letras minúsculas
-- Números
-- Caracteres especiales
+## 2. Problema
 
-El programa valida los datos ingresados y genera una contraseña utilizando los caracteres seleccionados.
+El uso de contraseñas débiles o fáciles de predecir representa un riesgo para la seguridad de la información. Muchas personas utilizan contraseñas cortas, repetitivas o poco variadas.
 
-## Investigación y fundamento
+Por esta razón, se desarrolló una herramienta que permite generar contraseñas de forma aleatoria a partir de los criterios seleccionados por el usuario.
 
-Para el desarrollo del Generador de Contraseñas Seguras se investigó el uso de mecanismos de generación aleatoria aplicados a contraseñas. La documentación oficial de Python establece que el módulo `secrets` permite generar valores aleatorios criptográficamente fuertes y apropiados para aplicaciones relacionadas con seguridad, como la generación de contraseñas.
+## 3. Objetivo del sistema
 
-A partir de esta información, se decidió utilizar el módulo `secrets` en el programa. Esta decisión permite realizar la selección aleatoria de caracteres utilizando una herramienta de Python destinada a aplicaciones relacionadas con seguridad.
+Desarrollar un generador de contraseñas seguras en Python que permita al usuario establecer la longitud de la contraseña y seleccionar diferentes tipos de caracteres para obtener una contraseña aleatoria.
 
-Además, el programa permite seleccionar diferentes tipos de caracteres y establecer la longitud de la contraseña. Esta decisión busca proporcionar flexibilidad al usuario, manteniendo validaciones que evitan configuraciones inválidas.
+## 4. Funcionalidades
 
-### Fuente consultada
+El sistema cuenta con las siguientes funcionalidades:
 
-Python Software Foundation. *secrets — Generate secure random numbers for managing secrets*. Documentación oficial de Python.
+- Generar una contraseña.
+- Seleccionar la longitud de la contraseña.
+- Incluir letras mayúsculas.
+- Incluir letras minúsculas.
+- Incluir números.
+- Incluir caracteres especiales.
+- Validar que la longitud mínima sea de 8 caracteres.
+- Mostrar un mensaje cuando no se seleccione ningún tipo de carácter.
+- Guardar las contraseñas generadas durante la ejecución.
+- Consultar el historial de contraseñas.
+- Finalizar el programa mediante la opción de salida.
 
-https://docs.python.org/3/library/secrets.html
+## 5. Estructura lógica del programa
 
-## Posición del estudiante
+El programa utiliza estructuras condicionales y repetitivas para controlar el funcionamiento del sistema.
 
-La posición adoptada en este proyecto es que un generador de contraseñas debe permitir al usuario configurar las características de la contraseña, pero debe mantener validaciones que garanticen el funcionamiento correcto del proceso.
+Entre las estructuras utilizadas se encuentran:
 
-Por esta razón, el programa permite seleccionar la longitud y los tipos de caracteres que se desean utilizar, pero no permite continuar cuando no se ha seleccionado ningún tipo de carácter.
+- Condicionales `if`, `elif` y `else`.
+- Ciclo `while` para mantener activo el menú principal.
+- Ciclos `for` para generar las contraseñas y recorrer el historial.
+- Manejo de excepciones mediante `try` y `except`.
+- Validación de los datos ingresados por el usuario.
 
-Esta decisión busca equilibrar la personalización proporcionada al usuario con las condiciones necesarias para que el generador produzca una contraseña válida.
+## 6. Organización del código
 
-## Objetivo
+El proyecto se encuentra organizado en módulos para separar las responsabilidades del programa.
 
-Diseñar e implementar un generador de contraseñas seguras aplicando los conceptos de lógica de programación, diagramas de flujo y estructuras de control.
+### `programa_principal.py`
 
-## Funcionalidades
+Contiene el flujo principal del sistema, el menú, la interacción con el usuario, la validación de opciones y la llamada a las funciones necesarias.
 
-- Solicitar la longitud de la contraseña.
-- Validar que la longitud sea un número válido y mayor que cero.
-- Seleccionar los tipos de caracteres.
-- Validar que al menos un tipo de carácter sea seleccionado.
-- Generar una contraseña aleatoria.
-- Mostrar la contraseña generada.
-- Permitir generar otra contraseña.
-- Finalizar el programa cuando el usuario lo indique.
+### `funciones.py`
 
-## Conclusiones y logros
+Contiene las funciones encargadas de:
 
-El desarrollo del Generador de Contraseñas Seguras permitió transformar los procesos representados inicialmente mediante diagramas de flujo en un programa funcional desarrollado en Python.
+- Generar los caracteres disponibles.
+- Generar la contraseña.
+- Validar la longitud.
+- Guardar el historial.
+- Mostrar el historial.
+- Mostrar el menú.
 
-Durante las pruebas se comprobó que el programa genera correctamente una contraseña cuando los datos ingresados son válidos. También se verificó que una longitud de `0` es rechazada mediante una validación y que el programa no permite continuar cuando no se selecciona ningún tipo de carácter.
+Esta organización permite mantener el código de manera clara y estructurada.
 
-Además, se comprobó que el usuario puede generar una nueva contraseña sin reiniciar el programa y puede finalizar el proceso cuando lo desea.
-
-Los resultados obtenidos muestran que las principales decisiones planteadas durante el diseño fueron implementadas en el código y comprobadas mediante diferentes casos de prueba.
-
-## Competencias adquiridas
-
-Durante el desarrollo del proyecto se aplicaron conocimientos de lógica de programación mediante el uso de variables, estructuras condicionales, estructuras repetitivas, validaciones y generación aleatoria.
-
-También se aplicó un proceso de desarrollo en el que primero se representaron las funcionalidades mediante diagramas de flujo y posteriormente se transformaron esas representaciones en código Python.
-
-El funcionamiento del programa fue evaluado mediante diferentes casos de prueba, incluyendo datos válidos y situaciones de error. Esto permitió comprobar el comportamiento del programa y verificar que las validaciones respondieran correctamente a las entradas del usuario.
-
-## Perspectivas y decisiones alternativas
-
-Durante el diseño del programa se consideró la relación entre la personalización de la contraseña y la necesidad de mantener condiciones de funcionamiento válidas.
-
-Una alternativa sería seleccionar automáticamente todos los tipos de caracteres para aumentar la variedad de la contraseña. Sin embargo, esta opción reduciría la capacidad del usuario para configurar el resultado.
-
-La solución implementada permite que el usuario seleccione los tipos de caracteres que desea utilizar, pero establece como condición que al menos un tipo debe ser seleccionado.
-
-Esta decisión busca mantener un equilibrio entre la libertad de configuración del usuario y las validaciones necesarias para generar una contraseña válida.
-
-## Pensamiento innovador
-
-La solución desarrollada integra en un mismo proceso la selección de longitud, la selección de tipos de caracteres, la validación de los datos y la generación aleatoria de la contraseña.
-
-Una característica de la solución es que el usuario puede configurar la contraseña sin modificar el código fuente. Además, el programa permite repetir el proceso para generar nuevas contraseñas sin necesidad de reiniciar la aplicación.
-
-Estas decisiones permiten transformar el proceso de generación de caracteres en una herramienta interactiva y sencilla de utilizar.
-
-## Relación entre los diagramas y el código
-
-Los diagramas de flujo fueron utilizados como representación previa de la lógica del programa. Posteriormente, cada proceso fue transformado en instrucciones de Python.
-
-| **Proceso representado** | **Implementación en el programa** |
-|---|---|
-| Solicitar la longitud | Entrada de datos mediante `input()` |
-| Validar la longitud | Estructuras condicionales |
-| Seleccionar tipos de caracteres | Condicionales para cada opción |
-| Crear el conjunto de caracteres | Unión de los caracteres seleccionados |
-| Generar la contraseña | Selección aleatoria mediante `secrets` |
-| Alcanzar la longitud solicitada | Estructura repetitiva `while` |
-| Generar otra contraseña | Repetición del proceso mediante un ciclo |
-| Finalizar el programa | Condición de salida |
-
-De esta manera, los diagramas de flujo funcionan como una representación visual de la lógica utilizada posteriormente para desarrollar el código.
-
-El proceso realizado fue:
-
-**Diagramas de flujo → lógica del programa → código Python → pruebas de funcionamiento.**
-
-## Tecnología utilizada
+## 7. Tecnología utilizada
 
 - Python
 - Visual Studio Code
 - GitHub
-  
-## Estructura del proyecto
+- Módulo `string`
+- Módulo `secrets`
+
+El módulo `secrets` se utiliza para realizar la selección aleatoria de caracteres orientada a aplicaciones relacionadas con seguridad.
+
+## 8. Funcionamiento del sistema
+
+El usuario inicia el programa y visualiza un menú con tres opciones:
+
+1. Generar contraseña.
+2. Ver historial.
+3. Salir.
+
+Al seleccionar la opción de generación, el sistema solicita la longitud de la contraseña y pregunta qué tipos de caracteres desea incluir.
+
+Después de validar la información, el sistema genera la contraseña, la muestra en pantalla y la almacena en el historial de la ejecución.
+
+El usuario puede consultar posteriormente las contraseñas generadas mediante la opción de historial.
+
+## 9. Diagramas del proyecto
+
+El repositorio contiene cinco diagramas desarrollados para representar la funcionalidad y arquitectura del sistema:
+
+1. **Diagrama 1 – Flujo principal:** representa el flujo general del programa y las opciones disponibles.
+2. **Diagrama 2 – Generación de contraseña:** representa el proceso de generación de la contraseña.
+3. **Diagrama 3 – Selección de caracteres:** representa la selección de mayúsculas, minúsculas, números y caracteres especiales.
+4. **Diagrama 4 – Guardar historial:** representa el proceso mediante el cual las contraseñas generadas se almacenan en el historial.
+5. **Diagrama 5 – Arquitectura:** representa la organización general del sistema y la relación entre sus componentes.
+
+Los diagramas se encuentran en la carpeta:
+
+`Diagramas_Proyecto_Final/`
+
+## 10. Pruebas de funcionamiento
+
+El sistema fue probado mediante las tres opciones disponibles en el menú:
+
+- Generación de una contraseña.
+- Consulta del historial.
+- Finalización del programa.
+
+Las pruebas realizadas permitieron comprobar que el sistema genera contraseñas, almacena el resultado en el historial y finaliza correctamente cuando el usuario selecciona la opción correspondiente.
+
+## 11. Estructura principal del repositorio
 
 ```text
 Generador-Contrase-as-Seguras/
 │
 ├── Codigo/
-│   └── generador_contraseñas.py
+│   ├── funciones.py
+│   └── programa_principal.py
 │
-├── Diagramas/
-│   ├── Diagrama_Flujo_1.png
-│   ├── Diagrama_Flujo_2.png
-│   ├── Diagrama_Flujo_3.png
-│   └── README.md
+├── Diagramas_Proyecto_Final/
+│   ├── Diagrama_1_Flujo_Principal.png
+│   ├── Diagrama_2_Generar_Contraseña.png
+│   ├── Diagrama_3_Seleccion_Caracteres.png
+│   ├── Diagrama_4_Guardar_Historial.png
+│   └── Diagrama_5_Arquitectura.png
 │
 ├── Documentacion/
-│   └── Manual.pdf
 │
 └── README.md
